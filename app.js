@@ -1,6 +1,6 @@
 const path = require("path");
 const fs = require("fs");
-const siteFolder = "./desintranet/"
+const siteFolder = "./rshqintranet/"
 let files = [];
 
 // these items give false positives. If a script element contains any of these words, we will let it pass
