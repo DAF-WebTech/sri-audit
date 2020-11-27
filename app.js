@@ -1,13 +1,14 @@
 const path = require("path");
 const fs = require("fs");
-const siteFolder = "./rshqintranet/"
+const siteFolder = "dnrme"
 let files = [];
 
 // these items give false positives. If a script element contains any of these words, we will let it pass
 // if you find new items, be sure to check them back in 
 let excludes = ["yammer", "gtm.start", "intranet", "?a=", "i,s,o,g,r,a,m", "<!--",
-    "fonts.googleapis", "platform.twitter.com", 
-    /* you can add site specific stuff here if needed */
+    "googleapis", "platform.twitter.com", "googletagmanager", "google-analytics", "recaptcha",
+    "qgov.net.au", "wmp", "__data", 
+     /* you can add site specific stuff here if needed */
      siteFolder]
 
 // this is just a simple recurse directories and get a list of files.
@@ -21,7 +22,7 @@ function recurseDirectories(directory) {
     });
 }
 
-recurseDirectories(siteFolder);
+recurseDirectories("./" + siteFolder + "/"); 
 
 files.forEach(f => {
 
@@ -74,3 +75,5 @@ files.forEach(f => {
         }
     })
 }) 
+
+console.log("done")
