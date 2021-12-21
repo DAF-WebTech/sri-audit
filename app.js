@@ -1,6 +1,6 @@
 const path = require("path");
 const fs = require("fs");
-const siteFolder = "dnrme"
+const siteFolder = "dnrme"  //TODO update this for the folder you're interested in
 let files = [];
 
 // these items give false positives. If a script element contains any of these words, we will let it pass
@@ -8,7 +8,7 @@ let files = [];
 let excludes = ["yammer", "gtm.start", "intranet", "?a=", "i,s,o,g,r,a,m", "<!--",
     "googleapis", "platform.twitter.com", "googletagmanager", "google-analytics", "recaptcha",
     "qgov.net.au", "wmp", "__data", 
-     /* you can add site specific stuff here if needed */
+     /* TODO you can add site specific stuff here if needed */
      siteFolder]
 
 // this is just a simple recurse directories and get a list of files.
